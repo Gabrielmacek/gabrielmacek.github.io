@@ -1,168 +1,309 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maison de Café</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" href="media/logo_Kreslicí plátno 1.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Nautilus</title>
+  <link rel="shortcut icon" href="media/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container">
-            <a class="navbar-brand mistologo btn-two"  href="#">Maison de Café</a>
-          
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link btn-two" href="menu.html">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn-two" href="onas.html">O nás</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn-two" href="kontakt.html">Kontaktovat</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <!-- HEADER -->
+ <header class="header sticky-header">
+  <div class="header-inner container">
+    <div class="logo">
+      <a href="#"><img src="media/logo.png" alt="Hotel Nautilus" /></a>
+    </div>
+    <button class="hamburger" aria-label="Menu">☰</button>
+    <nav class="menu">
+      <a href="#pokoje">Pokoje</a>
+      <a href="#sleva">Sleva</a>
+      <a href="#recenze">Recenze</a>
+      <a href="#faq">FAQ</a>
+      <a href="#rezervace">Rezervace</a>
     </nav>
+  </div>
+</header>
 
-    <!-- uvod s tlacitkem -->
-   
-    <section class="intro-section text-center text-white d-flex align-items-center justify-content-center">
-        <div class="container">
-            <h1 class="display-3 fw-bold font1" id="uvodnitext">Maison de Café</h1>  
-            <div class="decorative-line"></div>
-            <p class="lead">Kde luxusní káva a pohodlí jdou ruku v ruce.</p>
-            <a href="menu.html" class="btn btn-lg mt-4 btn-one">Objevte naše menu</a>
-        </div>
-    </section>
 
-    <!-- úvodní text -->
-    <section id="uvod" class="py-5">
-        <div class="container text-center">
-            <h2 class="mb-4 font1">Stavte se u nás</h2>
-            <h4 class="text">Navštivte naši kavárnu a užijte si skvělou kávu připravenou s láskou a pečlivostí. Nabízíme širokou nabídku nápojů, od klasického espressa po lahodné cappuccino a latte. Přijďte si odpočinout, načerpat energii a vychutnat si příjemnou atmosféru v našem útulném prostředí. Těšíme se na vaši návštěvu!</h4>
+  <!-- HERO SEKCE -->
+  <section class="hero" >
+    <div class="container">
+      <h1>Vítejte v Nautilus</h1>
+      <p>Užijte si pohodlí a krásu přírody</p>
+      <div class="btn-group">
+        <a href="#rezervace" class="btn">Rezervovat</a>
+        <a href="#pokoje" class="btn btn-secondary">Zobrazit pokoje</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCE POKOJE -->
+<section id="pokoje" class="rooms">
+  <div class="container">
+    <h2>Naše podvodní pokoje</h2>
+    <div class="room-grid">
+
+      <!-- Korálové apartmá -->
+      <div class="room-card">
+        <img src="media/pokoj1.webp" alt="Korálové apartmá">
+        <h3>Korálové apartmá</h3>
+        <p>Luxusní apartmá obklopené korálovým útesem. Klid, barvy a hluboký zážitek.</p>
+        <p>Cena od 14 990 Kč / noc</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ (34 recenzí)</p>
+        <div class="btn-group">
+          <a href="pokoje/pokoj1.html" class="btn">Detail</a>
         </div>
-    </section>
+      </div>
+
+      <!-- Modrá hlubina -->
+      <div class="room-card">
+        <img src="media/pokoj2.webp" alt="Modrá hlubina">
+        <h3>Modrá hlubina</h3>
+        <p>Elegantní útočiště v modrém tónu, kde světlo hraje s vlnami. Ideální pro romantické chvíle.</p>
+        <p>Cena od 18 890 Kč / noc</p>
+        <p>⭐️⭐️⭐️⭐️ (21 recenzí)</p>
+        <div class="btn-group">
+          <a href="pokoje/pokoj2.html" class="btn">Detail</a>
+        </div>
+      </div>
+
+      <!-- Atlantské apartmá -->
+      <div class="room-card">
+        <img src="media/pokoj3.webp" alt="Atlantské apartmá">
+        <h3>Atlantské apartmá</h3>
+        <p>Nejexkluzivnější pokoj inspirovaný legendou o Atlantidě. Luxus a soukromí bez kompromisů.</p>
+        <p>Cena od 29 990 Kč / noc</p>
+        <p>⭐️⭐️⭐️⭐️⭐️ (40 recenzí)</p>
+        <div class="btn-group">
+          <a href="pokoje/pokoj3.html" class="btn">Detail</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Sekce prémiových pokojů s karuselem -->
+<!-- Swiper sekce: Prémiové pokoje -->
+<!-- Swiper sekce: Prémiové pokoje -->
+<section id="carousel" class="section carousel-section">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Klasické pokoje</h2>
+
+    <div class="swiper">
+      <div class="swiper-wrapper">
+
+        <!-- Standardní pokoj -->
+        <div class="swiper-slide room-card">
+          <img src="media/standard.webp" alt="Standardní pokoj">
+          <div class="room-card__content">
+            <h3>Standardní pokoj</h3>
+            <p>Praktické a pohodlné ubytování pro krátké pobyty i služební cesty.</p>
+            <div class="room-info">
+              <span><i class="fas fa-bed"></i> 2 jednolůžka nebo manželská postel</span>
+              <span><i class="fas fa-bath"></i> Koupelna se sprchou</span>
+              <span><i class="fas fa-wifi"></i> Wi-Fi zdarma</span>
+            </div>
+            <div class="price-rating">
+              <span class="price">Od 1 490 Kč / noc</span>
+              <span class="rating"><i class="fas fa-star"></i> 4.2</span>
+            </div>
+            <a href="pokoje/pokoj4.html" class="btn">Více informací</a>
+          </div>
+        </div>
+
+        <!-- Rodinný pokoj -->
+        <div class="swiper-slide room-card">
+          <img src="media/rodinny.webp" alt="Rodinný pokoj">
+          <div class="room-card__content">
+            <h3>Rodinný pokoj</h3>
+            <p>Prostorný pokoj s oddělenými lůžky i pro děti. Bezpečí a pohodlí pro celou rodinu.</p>
+            <div class="room-info">
+              <span><i class="fas fa-bed"></i> 4 lůžka</span>
+              <span><i class="fas fa-bath"></i> Koupelna s vanou</span>
+              <span><i class="fas fa-tv"></i> TV, lednice</span>
+            </div>
+            <div class="price-rating">
+              <span class="price">Od 2 290 Kč / noc</span>
+              <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+            </div>
+            <a href="pokoje/pokoj5.html" class="btn">Více informací</a>
+          </div>
+        </div>
+
+        <!-- Business pokoj -->
+        <div class="swiper-slide room-card">
+          <img src="media/business.webp" alt="Business pokoj">
+          <div class="room-card__content">
+            <h3>Business pokoj</h3>
+            <p>Styl a funkčnost pro náročné pracovní pobyty. Rychlé připojení i pohodlný stůl.</p>
+            <div class="room-info">
+              <span><i class="fas fa-bed"></i> Manželská postel</span>
+              <span><i class="fas fa-laptop"></i> Pracovní koutek</span>
+              <span><i class="fas fa-wifi"></i> Rychlé Wi-Fi</span>
+            </div>
+            <div class="price-rating">
+              <span class="price">Od 1 890 Kč / noc</span>
+              <span class="rating"><i class="fas fa-star"></i> 4.5</span>
+            </div>
+            <a href="pokoje/pokoj6.html" class="btn">Více informací</a>
+          </div>
+        </div>
+
+        <!-- Junior Suite -->
+        <div class="swiper-slide room-card">
+          <img src="media/junior.webp" alt="Junior Suite">
+          <div class="room-card__content">
+            <h3>Junior Suite</h3>
+            <p>Prodloužený komfort pro delší pobyty. Kombinace obývací zóny a klidné ložnice.</p>
+            <div class="room-info">
+              <span><i class="fas fa-bed"></i> Ložnice + obývací část</span>
+              <span><i class="fas fa-bath"></i> Koupelna s vanou</span>
+              <span><i class="fas fa-tv"></i> Smart TV</span>
+            </div>
+            <div class="price-rating">
+              <span class="price">Od 2 590 Kč / noc</span>
+              <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+            </div>
+            <a href="pokoje/pokoj7.html" class="btn">Více informací</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigace -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- SEKCE SLEVA -->
+<section id="sleva" class="sleva-hero">
+  <div class="sleva-container">
+    <h2><span class="glow">🔥 Sleva <strong>30 %</strong></span> na letní pobyty</h2>
+    <p class="sleva-sub">Platí jen po omezenou dobu!</p>
     
+    <!-- 🕒 ODPOČET NAD TLAČÍTKEM -->
+    <div id="countdown" class="sleva-countdown">14:16:12</div>
 
-    <!-- oblibeny -->
-    <section id="menu" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-4 font1">Proč si naši zákazníci zamilovali naši kavárnu?</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="media/fotky/galerie/presso.jpg" class="card-img-top" alt="Espresso">
-                        <div class="card-body">
-                            <h5 class="card-title font1">Výjimečná káva</h5>
-                            <p class="card-text">Servírujeme arabiku z Etiopie, která si získala srdce milovníků kávy díky své jemné chuti a bohatému aroma.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="media/fotky/galerie/upravenafotka1.png" class="card-img-top" alt="Cappuccino">
-                        <div class="card-body">
-                            <h5 class="card-title font1">Historie plná příběhů</h5>
-                            <p class="card-text"> Naše kavárna je součástí pražské tradice již od roku 1910, kdy se stala oblíbeným místem setkávání umělců a intelektuálů.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="media/fotky/galerie/latte.jpg" class="card-img-top" alt="Latte">
-                        <div class="card-body">
-                            <h5 class="card-title font1">Více než šálek kávy</h5>
-                            <p class="card-text">Každý šálek je příležitostí k odpočinku, každý dezert malým kulinářským zážitkem. Přijďte a užijte si nezapomenutelné chvíle v příjemném prostředí.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- 📣 TLAČÍTKO -->
+    <a href="#rezervace" class="btn btn-sleva">Rezervovat se slevou</a>
+  </div>
+</section>
+
+
+
+  <!-- SEKCE RECENZE -->
+<section id="recenze" class="container" style="padding: 4rem 0;">
+  <h2 style="text-align: center; margin-bottom: 2rem;">Co o nás říkají hosté</h2>
+  <div class="review-grid">
+    <div class="review-box">
+      <p>„Naprostý zážitek. Konečně hotel, kde vše odpovídá fotkám.“</p>
+      <div class="review-author">— Petra M.</div>
+      <div class="review-stars">★★★★★</div>
+    </div>
+    <div class="review-box">
+      <p>„Pobyt v podvodním apartmá byl jako sen. Doporučujeme!“</p>
+      <div class="review-author">— Lenka a Tomáš</div>
+      <div class="review-stars">★★★★★</div>
+    </div>
+    <div class="review-box">
+      <p>„Skvělé jídlo, milý personál a perfektní lokalita.“</p>
+      <div class="review-author">— Jan K.</div>
+      <div class="review-stars">★★★★☆</div>
+    </div>
+    <div class="review-box">
+      <p>„Jedním slovem wow. Interiér i servis na vysoké úrovni.“</p>
+      <div class="review-author">— Barbora H.</div>
+      <div class="review-stars">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+  <!-- FAQ SEKCE (Carousel styl) -->
+  <section id="faq" class="carousel-section">
+    <div class="container">
+      <h2>Často kladené dotazy</h2>
+      <div class="carousel faq">
+        <div class="carousel-item">
+          <strong>Jak probíhá rezervace?</strong>
+          <p>Rezervace probíhá jednoduše přes formulář nebo telefonicky.</p>
         </div>
-    </section>
-    
-    <!-- čecenze -->
-    <section id="reviews" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4 font1">Co si o nás myslí kritici?</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <blockquote class="blockquote mb-0">
-                                <p>"Nejlepší Kafe v Praze!"</p>
-                                <footer class="blockquote-footer">Marek Párek, <cite title="Coffee Weekly">týdeník Kafař</cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <blockquote class="blockquote mb-0">
-                                <p>"Pokud milujete kávu, nesmíte tohle místo vynechat!"</p>
-                                <footer class="blockquote-footer">Jana Nováková, <cite title="časopis Obžerství">časopis Obžerství</cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <blockquote class="blockquote mb-0">
-                                <p>"Skvělá kvalita a útulná atmosféra."</p>
-                                <footer class="blockquote-footer">Babica, <cite title="Deník Kafíčko">deník Kafíčko</cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="carousel-item">
+          <strong>Mohu přijet se psem?</strong>
+          <p>Ano, domácí mazlíčci jsou u nás vítáni po předchozí domluvě.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- nějaký ty fotky -->
-    <section id="gallery" class="py-5">
-        <div class="container text-center">
-            <h2 class="mb-4 font1">Galerie</h2>
-            <div class="row g-3">
-                <div class="col-md-4">
-                    <img src="media/fotky/galerie/fotka1.jpg" class="img-fluid rounded shadow" alt="Gallery Image 1">
-                </div>
-                <div class="col-md-4">
-                    <img src="media/fotky/galerie/fotka2.jpg" class="img-fluid rounded shadow" alt="Gallery Image 2">
-                </div>
-                <div class="col-md-4">
-                    <img src="media/fotky/galerie/fotka3.jpg" class="img-fluid rounded shadow" alt="Gallery Image 3">
-                </div>
-                <div class="col-md-4">
-                    <img src="media/fotky/galerie/fotka4.jpg" class="img-fluid rounded shadow" alt="Gallery Image 4">
-                </div>
-                <div class="col-md-4">
-                    <img src="media/fotky/galerie/fotka5.jpg" class="img-fluid rounded shadow" alt="Gallery Image 5">
-                </div>
-                <div class="col-md-4">
-                    <img src="media/fotky/galerie/fotka6.jpg" class="img-fluid rounded shadow" alt="Gallery Image 6">
-                </div>
-            </div>
+  <!-- FORMULÁŘ -->
+<section id="rezervace" class="reservation">
+  <div class="container form-flex">
+    <div class="form-wrapper">
+      <h2>Rezervační formulář</h2>
+      <form id="rezervacni-formular" action="rezervace.php" method="POST">
+        <input type="text" name="jmeno" placeholder="Vaše jméno" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+
+        <div class="radio-input">
+          <input value="standard" name="value-radio" id="value-1" type="radio">
+          <label for="value-1">Pokoj Standard</label>
+          <input value="deluxe" name="value-radio" id="value-2" type="radio">
+          <label for="value-2">Pokoj Deluxe</label>
+          <input value="apartman" name="value-radio" id="value-3" type="radio">
+          <label for="value-3">Rodinný apartmán</label>
         </div>
-    </section>
 
-    <!-- nožička -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p class="mb-0">Pololetní Práce - Gabriel Macek 2025</p>
-    </footer>
+        <input type="date" name="datum_od" required>
+        <input type="date" name="datum_do" required>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="price-output">Vyberte typ pokoje a termín.</div>
+        <button type="submit" class="btn">Odeslat rezervaci</button>
+      </form>
+    </div>
+
+    <div class="form-image">
+      <img id="room-preview" src="media/pokoj1.webp" alt="Ukázka pokoje">
+      <div id="room-info" class="room-info-box"></div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 PenzionXYZ. Všechna práva vyhrazena.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      0: { slidesPerView: 1.2 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+
+
+</script>
 </body>
 </html>
