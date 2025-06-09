@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 </head>
 <body>
   <!-- HEADER -->
@@ -98,7 +100,7 @@
 
         <!-- Standardní pokoj -->
         <div class="swiper-slide room-card">
-          <img src="media/standard.webp" alt="Standardní pokoj">
+          <img src="media/pokoj4.webp" alt="Standardní pokoj">
           <div class="room-card__content">
             <h3>Standardní pokoj</h3>
             <p>Praktické a pohodlné ubytování pro krátké pobyty i služební cesty.</p>
@@ -117,7 +119,7 @@
 
         <!-- Rodinný pokoj -->
         <div class="swiper-slide room-card">
-          <img src="media/rodinny.webp" alt="Rodinný pokoj">
+          <img src="media/pokoj5.webp" alt="Rodinný pokoj">
           <div class="room-card__content">
             <h3>Rodinný pokoj</h3>
             <p>Prostorný pokoj s oddělenými lůžky i pro děti. Bezpečí a pohodlí pro celou rodinu.</p>
@@ -136,7 +138,7 @@
 
         <!-- Business pokoj -->
         <div class="swiper-slide room-card">
-          <img src="media/business.webp" alt="Business pokoj">
+          <img src="media/pokoj6.webp" alt="Business pokoj">
           <div class="room-card__content">
             <h3>Business pokoj</h3>
             <p>Styl a funkčnost pro náročné pracovní pobyty. Rychlé připojení i pohodlný stůl.</p>
@@ -155,7 +157,7 @@
 
         <!-- Junior Suite -->
         <div class="swiper-slide room-card">
-          <img src="media/junior.webp" alt="Junior Suite">
+          <img src="media/pokoj7.webp" alt="Junior Suite">
           <div class="room-card__content">
             <h3>Junior Suite</h3>
             <p>Prodloužený komfort pro delší pobyty. Kombinace obývací zóny a klidné ložnice.</p>
@@ -185,14 +187,13 @@
   <!-- SEKCE SLEVA -->
 <section id="sleva" class="sleva-hero">
   <div class="sleva-container">
-    <h2><span class="glow">🔥 Sleva <strong>30 %</strong></span> na letní pobyty</h2>
+    <h2><span class="glow">Sleva <strong>30 %</strong></span> na letní pobyty</h2>
     <p class="sleva-sub">Platí jen po omezenou dobu!</p>
-    
-    <!-- 🕒 ODPOČET NAD TLAČÍTKEM -->
-    <div id="countdown" class="sleva-countdown">14:16:12</div>
+ <div class="sleva-actions">
+  <div id="countdown" class="sleva-countdown">14:16:34</div>
+  <a href="#rezervace" class="btn btn-sleva">Rezervovat se slevou</a>
+</div>
 
-    <!-- 📣 TLAČÍTKO -->
-    <a href="#rezervace" class="btn btn-sleva">Rezervovat se slevou</a>
   </div>
 </section>
 
@@ -238,6 +239,10 @@
           <strong>Mohu přijet se psem?</strong>
           <p>Ano, domácí mazlíčci jsou u nás vítáni po předchozí domluvě.</p>
         </div>
+        <div class="carousel-item">
+          <strong>Je možné přijet dříve nebo odjet později než ve stanovený čas?</strong>
+          <p>Ano. Standardní check-in je od 14:00 a check-out do 11:00, ale rádi vám vyjdeme vstříc dle dostupnosti. Pokud potřebujete dřívější příjezd nebo pozdější odjezd, uveďte to prosím při rezervaci nebo nás kontaktujte předem.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -251,14 +256,29 @@
         <input type="text" name="jmeno" placeholder="Vaše jméno" required>
         <input type="email" name="email" placeholder="E-mail" required>
 
-        <div class="radio-input">
-          <input value="standard" name="value-radio" id="value-1" type="radio">
-          <label for="value-1">Pokoj Standard</label>
-          <input value="deluxe" name="value-radio" id="value-2" type="radio">
-          <label for="value-2">Pokoj Deluxe</label>
-          <input value="apartman" name="value-radio" id="value-3" type="radio">
-          <label for="value-3">Rodinný apartmán</label>
+       <div class="radio-input">
+              <input value="koralove" name="value-radio" id="value-1" type="radio">
+              <label for="value-1">Korálové apartmá</label>
+
+              <input value="modra" name="value-radio" id="value-2" type="radio">
+              <label for="value-2">Modrá hlubina</label>
+
+              <input value="atlantske" name="value-radio" id="value-3" type="radio">
+              <label for="value-3">Atlantské apartmá</label>
+
+              <input value="standard" name="value-radio" id="value-4" type="radio">
+              <label for="value-4">Standardní pokoj</label>
+
+              <input value="rodinny" name="value-radio" id="value-5" type="radio">
+              <label for="value-5">Rodinný pokoj</label>
+
+              <input value="business" name="value-radio" id="value-6" type="radio">
+              <label for="value-6">Business pokoj</label>
+
+              <input value="junior" name="value-radio" id="value-7" type="radio">
+              <label for="value-7">Junior Suite</label>
         </div>
+
 
         <input type="date" name="datum_od" required>
         <input type="date" name="datum_do" required>
@@ -270,18 +290,55 @@
 
     <div class="form-image">
       <img id="room-preview" src="media/pokoj1.webp" alt="Ukázka pokoje">
-      <div id="room-info" class="room-info-box"></div>
-    </div>
+     <div id="room-info" class="room-info-box">
+        <h3>Rodinný pokoj</h3>
+        <ul class="room-details">
+          <li>4 lůžka</li>
+          <li>TV</li>
+          <li>Vana</li>
+        </ul>
+        <div class="room-price-box">Cena za noc: <strong>2 290 Kč</strong></div>
+      </div>
+
   </div>
 </section>
 
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 PenzionXYZ. Všechna práva vyhrazena.</p>
+  <footer class="footer-section">
+  <div class="container footer-content">
+    <div class="footer-column">
+      <h4>Navigace</h4>
+      <ul>
+        <li><a href="#hero">Domů</a></li>
+        <li><a href="#pokoje">Pokoje</a></li>
+        <li><a href="#sleva">Sleva</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#rezervace">Rezervace</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <div class="footer-column">
+      <h4>Kontakt</h4>
+      <p>Email: <a href="mailto:info@nautilus.com">info@nautilus.com</a></p>
+      <p>Telefon: <a href="tel:+420123456789">+420 123 456 789</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Sledujte nás</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Hotel Nautilus. Všechna práva vyhrazena.</p>
+  </div>
+</footer>
+
 
   <script src="script.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
