@@ -1,0 +1,782 @@
+/* style.css */
+@font-face {
+    font-family: 'Breakwater';
+    src: url('fonts/Breakwater.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }  
+  @font-face {
+    font-family: 'Outfit';
+    src: url('fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }  
+:root {
+    --background: #000814;
+    --primary: #003566;
+    --secondary: #001d3d;
+    --accent: #ece4cc;
+    --text: #e5f0fc;
+    --font-main: 'Outfit', sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-main);
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  html {
+  scroll-behavior: smooth;
+}
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  /* Header */
+  .header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--background, #000814);
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  align-items: center;
+}
+
+.menu a {
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent, #ffd60a);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--secondary, #001d3d);
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+}
+
+  
+  /* Hero */
+  .hero {
+    background-size: cover;
+    background-position: center;
+    background-image: url('media/pozadi.webp');
+    text-align: center;
+    padding: 6rem 2rem;
+    padding-bottom: 10rem;
+    padding-top: 10rem;
+    color: var(--text);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    font-size: larger;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* černý průhledný overlay */
+    z-index: -1;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bolder;
+    color: #F2C078;
+    font-family: 'Breakwater', sans-serif;
+  }
+  
+  .btn-group {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  /* radio input */
+  .radio-input {
+    display: flex;
+    flex-direction: row;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .radio-input input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-input label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #212121;
+    border-radius: 5px;
+    margin-right: 12px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .radio-input label:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .radio-input input[type="radio"]:checked + label:before {
+    background-color: rgb(30, 0, 128);
+    top: 0;
+  }
+  
+  .radio-input input[type="radio"]:checked + label {
+    background-color: #ffd60a;
+    color: #001d3d;
+    border-color: rgb(30, 0, 128);
+    animation: radio-translate 0.5s ease-in-out;
+  }
+  
+  @keyframes radio-translate {
+    0% {
+      transform: translateX(0);
+    }
+  
+    50% {
+      transform: translateY(-10px);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid #ffd60a;
+    border-radius: 4px;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    font-size: 19px;
+    cursor: pointer;
+    color: #ffd60a;
+    background-color: rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    z-index: 1;
+  }
+  
+  .btn:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .btn:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #ffc300;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .btn:hover {
+    color: #ffffff;
+    border: 1px solid #ffc300;
+  }
+  
+  .btn:hover:before {
+    top: -35%;
+    background-color: #ffc300;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .btn:hover:after {
+    top: -45%;
+    background-color: #ffc300;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  /* Rooms */
+  .rooms h2 {
+   text-align: center;
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  }
+  
+  .room-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .room-card {
+    background: #fff1;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .room-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .room-card h3 {
+    margin: 1rem 0 0.5rem;
+  }
+  
+  .room-card .btn-group {
+    margin-top: 1rem;
+  }
+  /*CAROUSEL*/
+ .swiper-slide {
+  opacity: 0.3;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.swiper-slide.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+  /* slevová sekce */
+.sleva-hero {
+  position: relative;
+  background: url('media/leto.jpeg') center/cover no-repeat;
+  padding: 6rem 1rem;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.sleva-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 13, 32, 0.65); /* tmavý filtr */
+  z-index: 0;
+}
+
+.sleva-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+}
+
+.sleva-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.sleva-hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Breakwater', serif;
+}
+
+.sleva-hero h2 strong {
+  font-weight: bold;
+  color: #ffd60a;
+}
+
+.sleva-hero .glow strong {
+  animation: glowText 2s infinite;
+}
+
+@keyframes glowText {
+  0%, 100% {
+    text-shadow: 0 0 10px #ffd60a, 0 0 20px #ffd60a;
+  }
+  50% {
+    text-shadow: 0 0 20px #fff4b0, 0 0 30px #ffe173;
+  }
+}
+
+.sleva-sub {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.sleva-countdown {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #000814;
+  background: #ff0a0a;
+  padding: 0.75rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.btn-sleva {
+  background-color: #ffd60a;
+  color: #001d3d;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.btn-sleva:hover {
+  background-color: #ffe173;
+}
+.sleva-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.sleva-countdown {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000814;
+  background: #ff3333;
+  padding: 0.75rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.btn-sleva {
+  background-color: #ffd60a;
+  color: #001d3d;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-sleva:hover {
+  background-color: #ffe173;
+}
+
+
+  /* Carousel */
+  /* Kontejner Swiperu */
+.swiper {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Wrapper a slidy */
+.swiper-wrapper {
+  align-items: stretch;
+}
+
+.swiper-slide {
+  background: var(--secondary);
+  border-radius: 12px;
+  overflow: hidden;
+  color: var(--text);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  opacity: 0.3;
+  transform: scale(0.95);
+}
+
+/* Zvýrazněný střední slide */
+.swiper-slide.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(255, 214, 10, 0.3);
+}
+
+/* Obrázek pokoje */
+.swiper-slide img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Obsah karty */
+.room-card__content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.room-card__content h3 {
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.room-card__content p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.room-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.price-rating {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+
+  .carousel-section {
+    padding: 4rem 2rem;
+    background-color: #112b4c;
+    color: var(--text);
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .carousel-item {
+    min-width: 250px;
+    background: #fff1;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  
+.review-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.review-box {
+  background: var(--secondary);
+  color: var(--text);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.review-box p {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.review-author {
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.review-stars {
+  color: #ffd60a;
+  font-size: 1.2rem;
+}
+
+  /* Kontakt + FAQ */
+  .contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  .map {
+    flex: 1 1 300px;
+    min-height: 300px;
+    background: #000;
+  }
+  
+  .info {
+    flex: 1 1 300px;
+  }
+  
+  /* Rezervační formulář */
+  .form-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  
+  .form-wrapper {
+    flex: 1 1 300px;
+  }
+  
+  .form-image {
+    flex: 1 1 300px;
+    text-align: center;
+  }
+  
+  .form-image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  form {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  input,
+  select,
+  button {
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    color: #0b1d36;
+  }
+  input {
+    --input-focus: #ffc300;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --main-color: #323232;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+  }
+  
+  input::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+  }
+  
+  input:focus {
+    border: 2px solid var(--input-focus);
+  }
+
+  .price-output {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--accent);
+    text-align: center;
+  }
+  .room-info-box {
+  text-align: center;
+  color: var(--text);
+  margin-top: 1rem;
+}
+
+.room-info-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.room-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.room-details li {
+  margin: 0.2rem 0;
+}
+
+.room-price-box {
+  font-weight: bold;
+  color: #ffd60a;
+  font-size: 1.1rem;
+}
+
+  /* Footer */
+  .footer-section {
+  background-color: var(--secondary);
+  color: var(--text);
+  padding: 3rem 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h4 {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a,
+.footer-column p a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: var(--accent);
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 2rem;
+  font-size: 0.85rem;
+}
